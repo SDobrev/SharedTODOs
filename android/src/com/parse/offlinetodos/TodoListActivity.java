@@ -308,12 +308,16 @@ public class TodoListActivity extends Activity {
 				holder = new ViewHolder();
 				holder.todoTitle = (TextView) view
 						.findViewById(R.id.todo_title);
+				holder.todoDate = (TextView) view
+						.findViewById(R.id.todo_date);
 				view.setTag(holder);
 			} else {
 				holder = (ViewHolder) view.getTag();
 			}
 			TextView todoTitle = holder.todoTitle;
+			TextView todoDate = holder.todoDate;
 			todoTitle.setText(todo.getTitle());
+			todoDate.setText(todo.getEndDate());
 			if (todo.isDraft()) {
 				todoTitle.setTypeface(null, Typeface.ITALIC);
 			} else {
@@ -325,5 +329,6 @@ public class TodoListActivity extends Activity {
 
 	private static class ViewHolder {
 		TextView todoTitle;
+		TextView todoDate;
 	}
 }

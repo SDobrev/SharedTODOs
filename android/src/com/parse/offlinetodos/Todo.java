@@ -1,5 +1,6 @@
 package com.parse.offlinetodos;
 
+import java.util.Date;
 import java.util.UUID;
 
 import com.parse.ParseClassName;
@@ -17,7 +18,15 @@ public class Todo extends ParseObject {
 	public void setTitle(String title) {
 		put("title", title);
 	}
-	
+
+	public String getEndDate(){
+		return getString("endDate");
+	}
+
+	public void setEndDate(String date){
+		put("endDate", date);
+	}
+
 	public ParseUser getAuthor() {
 		return getParseUser("author");
 	}

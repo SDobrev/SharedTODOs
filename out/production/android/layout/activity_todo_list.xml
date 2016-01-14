@@ -23,7 +23,8 @@
         android:longClickable="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/loggedin_info" >
+        android:layout_below="@id/loggedin_info"
+        android:animateLayoutChanges="true">
     </ListView>
 
     <LinearLayout

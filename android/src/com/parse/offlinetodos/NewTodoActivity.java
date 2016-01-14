@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -19,6 +20,8 @@ public class NewTodoActivity extends Activity {
 	private Button saveButton;
 	private Button deleteButton;
 	private EditText todoText;
+	private String stringDate;
+	private DatePicker endDate;
 	private Todo todo;
 	private String todoId = null;
 
@@ -33,6 +36,7 @@ public class NewTodoActivity extends Activity {
 		}
 
 		todoText = (EditText) findViewById(R.id.todo_text);
+		endDate = (DatePicker) findViewById(R.id.datePicker);
 		saveButton = (Button) findViewById(R.id.saveButton);
 		deleteButton = (Button) findViewById(R.id.deleteButton);
 
@@ -66,6 +70,8 @@ public class NewTodoActivity extends Activity {
 				todo.setTitle(todoText.getText().toString());
 				todo.setDraft(true);
 				todo.setAuthor(ParseUser.getCurrentUser());
+				stringDate = endDate.getDayOfMonth() + "-" + endDate.getMonth()+1 + "-" +endDate.getYear();
+				todo.setEndDate(stringDate);
 				todo.pinInBackground(TodoListApplication.TODO_GROUP_NAME,
 						new SaveCallback() {
 
