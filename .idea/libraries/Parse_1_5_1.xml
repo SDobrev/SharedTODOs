@@ -2,6 +2,7 @@
   <library name="Parse-1.5.1">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/android/libs/Parse-1.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ParseUI-Android/ParseLoginUI/libs/android-support-v4.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

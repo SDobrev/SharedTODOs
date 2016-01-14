@@ -156,11 +156,17 @@ public class TodoListActivity extends Activity {
 
 		if (item.getItemId() == R.id.action_sync) {
 			syncTodosToParse();
+			Toast.makeText(getApplicationContext(),
+					"Successfully synced to Parse",
+					Toast.LENGTH_SHORT).show();
 		}
 
 		if (item.getItemId() == R.id.action_logout) {
 			// Log out the current user
 			ParseUser.logOut();
+			Toast.makeText(getApplicationContext(),
+					"Logged out",
+					Toast.LENGTH_SHORT).show();
 			// Create a new anonymous user
 			ParseAnonymousUtils.logIn(null);
 			// Update the logged in label info
@@ -232,7 +238,6 @@ public class TodoListActivity extends Activity {
 									}
 
 								});
-
 							}
 						} else {
 							Log.i("TodoListActivity",
