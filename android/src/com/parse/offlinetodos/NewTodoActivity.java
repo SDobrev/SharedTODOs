@@ -77,7 +77,7 @@ public class NewTodoActivity extends Activity {
 								if (e == null) {
 									setResult(Activity.RESULT_OK);
 									Toast.makeText(getApplicationContext(),
-											"TODO added successfully",
+											"TODO saved successfully",
 											Toast.LENGTH_SHORT).show();
 									finish();
 								} else {

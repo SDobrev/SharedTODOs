@@ -77,12 +77,13 @@ public class TodoListActivity extends Activity {
 		ListView todoListView = (ListView) findViewById(R.id.todo_list_view);
 		todoListView.setAdapter(todoListAdapter);
 
-		todoListView.setOnItemClickListener(new OnItemClickListener() {
+		todoListView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
+			public boolean onItemLongClick(AdapterView<?> parent, View view,
+									int position, long id) {
 				Todo todo = todoListAdapter.getItem(position);
 				openEditView(todo);
+				return true;
 			}
 		});
 	}
@@ -157,7 +158,7 @@ public class TodoListActivity extends Activity {
 		if (item.getItemId() == R.id.action_sync) {
 			syncTodosToParse();
 			Toast.makeText(getApplicationContext(),
-					"Successfully synced to Parse",
+					"Synced to Parse",
 					Toast.LENGTH_SHORT).show();
 		}
 
